@@ -5,40 +5,47 @@
   margin-right: auto;
   margin-left: auto;
   max-width: 450px;
-}
-.mt {
   margin-top: 170px;
 }
 .mt1 {
   margin-top: 100px;
 }
-.mt2 {
-  margin-top: 56px;
-}
-/* 
-a:hover {
-  color: sandybrown;
-} */
+
 .box {
   box-shadow: 7px 7px 3px grey;
   text-shadow: 1px 1px red;
 }
-/* .col div:hover {
-  background-color: greenyellow;
-} */
 body {
   overflow-x: hidden;
 }
 .sidebar {
-  width: 215px;
-  height: 85vh;
+  top: 57px;
+  left: 0;
+  width: 180px;
+  height: 100%;
   position: fixed;
-  background-color: darkgray;
+  background-color: #f1f1f1;
+  overflow: auto;
 }
-
-.nav-link:active,
-.nav-link:hover {
-  background-color: #ffffff26;
+.sidebar a {
+  display: block;
+  color: black;
+  padding-top: 16px;
+  padding-left: 40px;
+  text-decoration: none;
+}
+.sidebar a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+div.content {
+  margin-top: 57px;
+  margin-left: 180px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+.sidebar a:hover:not(.active) {
+  background-color: white;
 }
 /* Medium devices (tablets, 768px and up) */
 @media screen and (max-width: 768px) {
@@ -50,8 +57,29 @@ body {
   .navbar a.navbar-brand {
     padding-left: 30%;
   }
+}
+@media screen and (max-width: 700px) {
   .sidebar {
-    width: 0;
-    height: 0;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  div.content {
+    margin-left: 0;
+  }
+  .sidebar a {
+    float: left;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+  .sidebar a {
+    float: left;
+    padding: 10px;
   }
 }
